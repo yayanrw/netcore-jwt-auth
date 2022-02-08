@@ -1,7 +1,8 @@
-var builder = WebApplication.CreateBuilder(args);
+using JwtAuth.Extensions;
+var builder = Microsoft.AspNetCore.Builder.WebApplication.CreateBuilder(args);
 
 // Add services to the container.
-
+builder.Services.AddJWTTokenServices(builder.Configuration);
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
